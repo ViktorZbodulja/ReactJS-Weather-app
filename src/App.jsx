@@ -1,22 +1,25 @@
 import './App.css';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { fetchDataPicture, fetchDataCity, fetchDailyForecast } from "./services/fetchData";
 import Main from './components/Main';
 import Footer from './components/Footer';
 import Forecast from './components/Forecast';
+import { AiOutlineSearch } from "react-icons/ai";
 
 function App() {
 
   const [data, setCityData] = useState(null);
-  const [error, setCityError] = useState(null);
-  
   const [pictureData, setPictureData ] = useState(null);
-  const [pictureError, setPictureError] = useState(null);
-
   const [location, setLocationData] = useState("");
-
   const [dailyData, setDailyData] = useState("");
-  const [dailyError, setDailyError] = useState("");
+ 
+  const [style, setStyle] = useState("forecastDataHide");
+  const [button, setButton] = useState("Show Forecast");
+  const changeStyle = () => {
+    //toggle
+    setStyle(current => !current);
+    setButton(current => !current);
+  };
 
   //const { coord: { lon, lat}} = data;
 
@@ -45,25 +48,39 @@ function App() {
  
 var slika = "";
 
-if(pictureData.total > 0){
-  slika = pictureData.results[0].urls.full;
+if(pictureData){
+  if(pictureData.total > 0){
+    slika = pictureData.results[0].urls.full;
+  }
+  else{
+    slika = "https://wallpapercave.com/wp/wp3594884.jpg";
+  } 
 }
 else{
   slika = "https://wallpapercave.com/wp/wp3594884.jpg";
 }
-
+/*
 if(location.trim() == "" || typeof location == "undefined"){
   slika = "https://wallpapercave.com/wp/wp3594884.jpg";
 }
-
+*/
+/*
 if(data.cod == "400" || data.cod == "404"){
   slika = "https://wallpapercave.com/wp/wp3594884.jpg";
 }
+*/
 
   return (  
     <div className="App" style={{ background: `url(${slika}) no-repeat center center/cover` }}>
-      <Main data={data} setCity={setCity} fetchData={fetchData} />
-      <Forecast data={data} dailyData={dailyData} fetchData={fetchData} />
+      <div className='formClass'>
+          <form className='formBlock' onSubmit={fetchData}>
+            <input type="text" name="field" id="field" placeholder='Enter City' onChange={setCity}/>
+            <button className="searchButton"  type='submit' ><AiOutlineSearch size="25px" color='white' /></button>
+            {data && data.message == "city not found" ? <div className='notExist'>City not found. Please enter other city.</div> : ""}
+          </form>
+        </div>
+      {data ? <Main data={data} changeStyle={changeStyle} button={button} /> : ""}
+      {data && dailyData ? <Forecast data={data} dailyData={dailyData} fetchData={fetchData} style={style} /> : ""}
       <Footer data={data} location={location} />
     </div>
   );

@@ -77,7 +77,7 @@ input:se {
   color: white;
 }
 
-button {
+.searchButton {
   position: absolute;
   top: 0;
   margin-top: 3rem;
@@ -90,12 +90,12 @@ button {
   width: 3.3em;
 }
 
-button:hover{
+.searchButton:hover{
   cursor: pointer;
   background-color: rgba(224, 220, 220, 0.4);
 }
 
-button:active {
+.searchButton:active {
   transform: translateY(2px)
 }
 
@@ -106,10 +106,6 @@ button:active {
   justify-content: center;
 }
 
-.allDataHide {
-  display: none;
-}
-
 .allDataShow {
   display: flex;
   flex-wrap: wrap;
@@ -118,27 +114,28 @@ button:active {
   text-align: center;
   border-radius: 25px;
   border: 1px solid;
-  margin-top: 3rem;
+  margin-top: 2.2rem;
   background-color: rgba(170, 167, 167, 0.6);
 }
 
 .city {
   display: inline-block;
   text-align: left;
-  font-size: 3.5rem;
+  font-size: 3.3rem;
   text-decoration: underline 3px;
   margin-left: 15px; 
 }
 
 .country {
   display: inline-block;
-  font-size: 3.5rem;
+  font-size: 3.3rem;
   text-align: left;
   margin-left: 15px;
-  background-color:rgba(218, 165, 32, 0.7);
+  background-color: rgba(240, 152, 25, 0.8);
   border-radius: 10px;
 }
-
+/* rgba(240, 152, 25, 0.7);
+rgba(218, 165, 32, 0.7);*/
 .temperature {
   flex-basis: 100%;
   font-size: 6rem;
@@ -148,7 +145,7 @@ button:active {
 .clouds {
   flex-basis: 100%;
   text-align: right;
-  font-size: 2.8rem;   
+  font-size: 2.6rem;   
   margin-right: 15px; 
 }
 
@@ -156,18 +153,26 @@ button:active {
   transform: translateY(17px);
 }
 
+#MdLocation {
+  padding-top: 5px;
+}
+
 .localTime {
   flex-basis: 100%;
-  display: block;
   font-size: 1.8rem;
   font-weight: 200;
-  margin-top: 8px;
-  color: white;
+  margin-top: 10px;
+  color: white; 
+}
+
+.localTime div {
+  display: inline-block;
+  background-color: rgba(170, 167, 167, 0.6);
 }
 
 .airPressure {
   flex-basis: 100%;
-  font-size: 2.4rem;
+  font-size: 2.2rem;
   text-align: right; 
   margin-right: 15px;
 }
@@ -175,6 +180,7 @@ button:active {
 .footer {
   flex-basis: 40%; 
   height: 15%;
+  margin-top: 10px;
 }
 
 .extraData {
@@ -186,8 +192,9 @@ button:active {
   background-color: rgba(170, 167, 167, 0.5);
   color: white;
   border-radius: 25px; 
-  margin-bottom: 50px;
-  font-size: 1.9rem; 
+  
+  margin-top: 10px;
+  font-size: 1.8rem; 
 }
 
 .feelsLike {
@@ -249,11 +256,20 @@ button:active {
   margin-top: 15vh;  
 }
 
-.forecast {
+.forecastDataHide {
+  opacity: 0;
   display: flex;
   flex-basis: 71%;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.forecast {
+  display: flex;
+  flex-basis: 65%;
+  flex-wrap: wrap;
+  justify-content: center;
+  opacity: 1; 
 }
 
 .forecast h3 {
@@ -265,14 +281,52 @@ button:active {
 .daysOfTheWeek {
   font-size: 1.3rem;
   display: flex;
-  flex-basis: 50%;
+  flex-basis: 53%;
   justify-content: space-between;
 }
 
 .dayWeek {
   padding: 1rem;
-  background-color: rgba(170, 167, 167, 0.6);
+  background-color: rgba(167, 169, 170, 0.7);
   border-radius: 20px;
+  text-align: center; 
+  outline: rgb(135, 134, 134) 1px solid;
+}
+
+.dayWeek:hover {
+  outline: white 1.5px solid;
+  box-shadow: 0 0 2px #c9c9c9;
+  background-image: linear-gradient(45deg, rgba(255, 81, 47, 0.8) 0%, rgba(240, 152, 25, 0.8)  51%, rgba(255, 81, 47, 0.8)  100%);
+}
+
+.forecastButton {
+  margin: 10px;
+  padding: 13px 27px;
+  width: 167px;
   text-align: center;
-  
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 10px;
+  display: block;
+  border: 0px;
+  font-weight: 600;
+  box-shadow: 0px 0px 14px -7px #f09819;
+  background-image: linear-gradient(45deg, #FF512F 0%, #F09819  51%, #FF512F  100%);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.forecastButton:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.forecastButton:active {
+  transform: scale(0.95);
 }

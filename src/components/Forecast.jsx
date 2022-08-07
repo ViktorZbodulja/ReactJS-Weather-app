@@ -1,52 +1,30 @@
-import clearDay from '../svg/clear-day.svg'
-import rain from '../svg/rain.svg';
-import snow from '../svg/snow.svg';
-import thunderstorm from '../svg/thunderstorms-day-rain.svg';
-import partlyColudy from '../svg/partly-cloudy-day.svg';
-import overcastDay from '../svg/overcast-day.svg';
-import fog from '../svg/partly-cloudy-day-fog.svg';
-
 import { DateTime } from 'luxon';
 
 const formatToLocalTime = (secs, zone, format = "ccc"
 ) => DateTime.fromSeconds(secs).setZone(zone).toFormat(format);
 
 function Forecast(props){
-  
+
   const localTimeZone = props.dailyData.timezone;
     
   return (
-        <div className="forecast">
+        <div className={props.style ? "forecastDataHide" : "forecast"}>
           <h3>DAILY FORECAST</h3>
           <div className='daysOfTheWeek'>
-            <div className='dayWeek'>
-              <div>{formatToLocalTime(props.dailyData.daily[1].dt, localTimeZone,)}</div>
-              <div><img src={overcastDay} width="70px"/></div>
-              <div>{props.dailyData.daily[1].temp.day.toFixed(0)}°/18°</div>   
+          {props.dailyData.daily.slice(1, 6).map((d) => 
+            <div className='dayWeek' key={d.dt}>
+              <div>{formatToLocalTime(d.dt, localTimeZone,)}</div>
+              <div><img src={`https://openweathermap.org/img/wn/${d.weather[0].icon}@2x.png`} width="85px"/></div>
+              <div>{d.temp.min.toFixed(0)}°/{d.temp.max.toFixed(0)}°</div>   
             </div>
-            <div className='dayWeek'>
-              <div>{formatToLocalTime(props.dailyData.daily[2].dt, localTimeZone)}</div>
-              <div><img src={overcastDay} width="70px"/></div>
-              <div>{props.dailyData.daily[2].temp.day.toFixed(0)}°/18°</div>
-            </div>
-            <div className='dayWeek'>
-              <div>{formatToLocalTime(props.dailyData.daily[3].dt, localTimeZone)}</div>
-              <div><img src={overcastDay} width="70px"/></div>
-              <div>23°/18°</div>
-            </div>
-            <div className='dayWeek'>
-              <div>{formatToLocalTime(props.dailyData.daily[4].dt, localTimeZone)}</div>
-              <div><img src={overcastDay} width="70px"/></div>
-              <div>23°/18°</div>
-            </div>
-            <div className='dayWeek'>
-              <div>{formatToLocalTime(props.dailyData.daily[5].dt, localTimeZone)}</div>
-              <div><img src={overcastDay} width="70px"/></div>
-              <div>23°/18°</div>
-            </div>
+          )}
           </div>
-        </div>
+        </div>    
     );
 }
+
+
+          
+
 
 export default Forecast;

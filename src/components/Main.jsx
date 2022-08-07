@@ -1,7 +1,6 @@
 
 import { useState } from "react";
 import { DateTime } from 'luxon';
-import { AiOutlineSearch } from "react-icons/ai";
 import { MdLocationOn } from "react-icons/md";
 
 import clearDay from '../svg/clear-day.svg'
@@ -14,21 +13,12 @@ import fog from '../svg/partly-cloudy-day-fog.svg';
 
 function Main(props){
 
-  const [style, setStyle] = useState("allDataHide");
-  const changeStyle = () => {
-    //console.log("you just clicked");
-    setStyle("allDataShow");
-  };
-
     var emoji = null;     
     if(typeof props.data.main !== "undefined"){
       if(props.data.weather[0].description == "clear sky"){
         emoji = clearDay; 
       }
-      else if (props.data.weather[0].description == "few clouds"){
-          emoji = partlyColudy;
-      }
-      else if (props.data.weather[0].description == "scattered clouds"){
+      else if (props.data.weather[0].description == "few clouds" || "scattered clouds" || "overcast clouds" ){
           emoji = partlyColudy;
       }
       else if (props.data.weather[0].description == "broken clouds"){
@@ -37,7 +27,7 @@ function Main(props){
       else if (props.data.weather[0].description == "shower rain"){
           emoji = rain;
       }
-      else if (props.data.weather[0].description == "rain" || "light rain"){
+      else if (props.data.weather[0].description == "rain" || "light rain" || "drizzle"){
           emoji = rain;
       }
       else if (props.data.weather[0].description == "thunderstorm"){
@@ -48,12 +38,6 @@ function Main(props){
       }
       else if (props.data.weather[0].description == "mist"){
           emoji = fog;
-      }
-      else if (props.data.weather[0].description == "drizzle"){
-        emoji = rain;
-      }
-      else if (props.data.weather[0].description == "overcast clouds"){
-        emoji = partlyColudy;
       }
     }
     else {
@@ -75,15 +59,8 @@ function Main(props){
     
     return (
       <main className='flexContainer'>
-        <div className='formClass'>
-          <form className='formBlock'>
-            <input type="text" name="field" id="field" placeholder='Enter City' onChange={props.setCity}/>
-            <button type='submit' onClick={props.fetchData}><AiOutlineSearch size="25px" color='white' /></button>
-            {props.data.message == "city not found" ? <div className='notExist'>City not found. Please enter other city.</div> : ""}
-          </form>
-        </div>
-        <div className={style}>
-          <div className='city'>{props.data.name ? <div><MdLocationOn size="45px" />{props.data.name}</div> : ""}</div>
+        <div className="allDataShow">
+          <div className='city'>{props.data.name ? <div><MdLocationOn size="45px" id="MdLocation" />{props.data.name}</div> : ""}</div>
           {props.data.sys ? <div className='country'>{props.data.sys.country}</div> : ""}
           <div className='temperature'>
             {props.data.main ? <h3>{props.data.main.temp.toFixed(1)} °C</h3> : ""}
@@ -95,7 +72,8 @@ function Main(props){
             {props.data.main ? <div>{props.data.main.pressure} hPa</div> : ""} 
           </div>
         </div>
-        {props.data.main ? <div className='localTime'>{formatToLocalTime(props.data.dt, showLocalTime)}</div> : ""}
+        {props.data.main ? <div className='localTime'><div >{formatToLocalTime(props.data.dt, showLocalTime)}</div></div> : ""}
+      <button className="forecastButton" onClick={props.changeStyle}>{props.button ? "Show Forecast" : "Hide Forecast"}</button>
       </main>
     );
 }
