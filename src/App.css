@@ -259,9 +259,10 @@ rgba(218, 165, 32, 0.7);*/
 .forecastDataHide {
   opacity: 0;
   display: flex;
-  flex-basis: 71%;
+  flex-basis: 65%;
   flex-wrap: wrap;
   justify-content: center;
+  transition: opacity 0.4s ease-in-out; 
 }
 
 .forecast {
@@ -269,13 +270,18 @@ rgba(218, 165, 32, 0.7);*/
   flex-basis: 65%;
   flex-wrap: wrap;
   justify-content: center;
-  opacity: 1; 
+  opacity: 1;
+  transition: opacity 0.6s ease-in-out; 
 }
 
 .forecast h3 {
   flex-basis: 100%;
   margin-bottom: 10px;
   text-decoration: underline;
+}
+
+.forecastHeader {
+  flex-basis: 100%;
 }
 
 .daysOfTheWeek {
@@ -287,7 +293,7 @@ rgba(218, 165, 32, 0.7);*/
 
 .dayWeek {
   padding: 1rem;
-  background-color: rgba(167, 169, 170, 0.7);
+  background-color: rgba(167, 169, 170, 0.6);
   border-radius: 20px;
   text-align: center; 
   outline: rgb(135, 134, 134) 1px solid;

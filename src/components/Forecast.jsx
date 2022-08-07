@@ -9,7 +9,7 @@ function Forecast(props){
     
   return (
         <div className={props.style ? "forecastDataHide" : "forecast"}>
-          <h3>DAILY FORECAST</h3>
+          <h3 className='forecastHeader'>DAILY FORECAST</h3>
           <div className='daysOfTheWeek'>
           {props.dailyData.daily.slice(1, 6).map((d) => 
             <div className='dayWeek' key={d.dt}>
