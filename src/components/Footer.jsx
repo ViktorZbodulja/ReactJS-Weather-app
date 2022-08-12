@@ -4,8 +4,8 @@ import { SiTailwindcss } from "react-icons/si";
 
 function Footer(props){
     return (
-        <footer className='footer'>
-        <div className='extraData'>
+        <footer className='footer t-kolona-6 s-kolona-6 p-kolona-7 l-kolona-8 k-kolona-10 c-kolona-11'>
+        <div className='extraData '>
           <div className='feelsLike'>
             <div>{props.data ? <div><FaTemperatureHigh size={30} id="temperatureHigh"/>{props.data.main.feels_like.toFixed()} °C</div> : <div><FaTemperatureHigh size={30} id="temperatureHigh"/> ... </div>}</div>
             <div>Feels Like</div>

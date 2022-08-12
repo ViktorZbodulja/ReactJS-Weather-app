@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-
 .App {
   text-align: center;
   display: flex;
@@ -179,7 +178,7 @@ rgba(218, 165, 32, 0.7);*/
 
 .footer {
   flex-basis: 40%; 
-  height: 15%;
+  height: 12%;
   margin-top: 10px;
 }
 
@@ -266,11 +265,11 @@ rgba(218, 165, 32, 0.7);*/
 }
 
 .forecast {
+  opacity: 1;
   display: flex;
   flex-basis: 65%;
   flex-wrap: wrap;
   justify-content: center;
-  opacity: 1;
   transition: opacity 0.6s ease-in-out; 
 }
 
@@ -336,3 +335,266 @@ rgba(218, 165, 32, 0.7);*/
 .forecastButton:active {
   transform: scale(0.95);
 }
+
+
+/* desktop */
+.d-kolona-1 {flex-basis: 8.33%;}
+.d-kolona-2 {flex-basis: 16.66%;}
+.d-kolona-3 {flex-basis: 25%;}
+.d-kolona-4 {flex-basis: 33.33%;}
+.d-kolona-5 {flex-basis: 41.66%;}
+.d-kolona-6 {flex-basis: 50%;}
+.d-kolona-7 {flex-basis: 58.33%;}
+.d-kolona-8 {flex-basis: 66.66%;}
+.d-kolona-9 {flex-basis: 75%;}
+.d-kolona-10 {flex-basis: 83.33%;}
+.d-kolona-11 {flex-basis: 91.66%;}
+.d-kolona-12 {flex-basis: 100%;}
+
+/* tablet */
+@media (max-width: 1700px){
+	.t-kolona-1 {flex-basis: 8.33%;}
+	.t-kolona-2 {flex-basis: 16.66%;}
+	.t-kolona-3 {flex-basis: 25%;}
+	.t-kolona-4 {flex-basis: 33.33%;}
+	.t-kolona-5 {flex-basis: 41.66%;}
+	.t-kolona-6 {flex-basis: 50%;}
+	.t-kolona-7 {flex-basis: 58.33%;}
+	.t-kolona-8 {flex-basis: 66.66%;}
+	.t-kolona-9 {flex-basis: 75%;}
+	.t-kolona-10 {flex-basis: 83.33%;}
+	.t-kolona-11 {flex-basis: 91.66%;}
+	.t-kolona-12 {flex-basis: 100%;}
+}
+
+/* tablet1 */
+@media (max-width: 1400px){
+	.s-kolona-1 {flex-basis: 8.33%;}
+	.s-kolona-2 {flex-basis: 16.66%;}
+	.s-kolona-3 {flex-basis: 25%;}
+	.s-kolona-4 {flex-basis: 33.33%;}
+	.s-kolona-5 {flex-basis: 41.66%;}
+	.s-kolona-6 {flex-basis: 50%;}
+	.s-kolona-7 {flex-basis: 58.33%;}
+	.s-kolona-8 {flex-basis: 66.66%;}
+	.s-kolona-9 {flex-basis: 75%;}
+	.s-kolona-10 {flex-basis: 83.33%;}
+	.s-kolona-11 {flex-basis: 91.66%;}
+	.s-kolona-12 {flex-basis: 100%;}
+}
+
+@media (max-width: 1250px){
+	.p-kolona-1 {flex-basis: 8.33%;}
+	.p-kolona-2 {flex-basis: 16.66%;}
+	.p-kolona-3 {flex-basis: 25%;}
+	.p-kolona-4 {flex-basis: 33.33%;}
+	.p-kolona-5 {flex-basis: 41.66%;}
+	.p-kolona-6 {flex-basis: 50%;}
+	.p-kolona-7 {flex-basis: 58.33%;}
+	.p-kolona-8 {flex-basis: 66.66%;}
+	.p-kolona-9 {flex-basis: 75%;}
+	.p-kolona-10 {flex-basis: 83.33%;}
+	.p-kolona-11 {flex-basis: 91.66%;}
+	.p-kolona-12 {flex-basis: 100%;}
+}
+
+@media (max-width: 1020px){
+	.l-kolona-1 {flex-basis: 8.33%;}
+	.l-kolona-2 {flex-basis: 16.66%;}
+	.l-kolona-3 {flex-basis: 25%;}
+	.l-kolona-4 {flex-basis: 33.33%;}
+	.l-kolona-5 {flex-basis: 41.66%;}
+	.l-kolona-6 {flex-basis: 50%;}
+	.l-kolona-7 {flex-basis: 58.33%;}
+	.l-kolona-8 {flex-basis: 66.66%;}
+	.l-kolona-9 {flex-basis: 75%;}
+	.l-kolona-10 {flex-basis: 83.33%;}
+	.l-kolona-11 {flex-basis: 91.66%;}
+	.l-kolona-12 {flex-basis: 100%;}
+}
+@media (max-width: 905px){
+	.k-kolona-1 {flex-basis: 8.33%;}
+	.k-kolona-2 {flex-basis: 16.66%;}
+	.k-kolona-3 {flex-basis: 25%;}
+	.k-kolona-4 {flex-basis: 33.33%;}
+	.k-kolona-5 {flex-basis: 41.66%;}
+	.k-kolona-6 {flex-basis: 50%;}
+	.k-kolona-7 {flex-basis: 58.33%;}
+	.k-kolona-8 {flex-basis: 66.66%;}
+	.k-kolona-9 {flex-basis: 75%;}
+	.k-kolona-10 {flex-basis: 83.33%;}
+	.k-kolona-11 {flex-basis: 91.66%;}
+	.k-kolona-12 {flex-basis: 100%;}
+}
+
+@media (max-width: 725px){
+	.c-kolona-1 {flex-basis: 8.33%;}
+	.c-kolona-2 {flex-basis: 16.66%;}
+	.c-kolona-3 {flex-basis: 25%;}
+	.c-kolona-4 {flex-basis: 33.33%;}
+	.c-kolona-5 {flex-basis: 41.66%;}
+	.c-kolona-6 {flex-basis: 50%;}
+	.c-kolona-7 {flex-basis: 58.33%;}
+	.c-kolona-8 {flex-basis: 66.66%;}
+	.c-kolona-9 {flex-basis: 75%;}
+	.c-kolona-10 {flex-basis: 83.33%;}
+	.c-kolona-11 {flex-basis: 91.66%;}
+	.c-kolona-12 {flex-basis: 100%;}
+}
+
+@media (max-width: 650px){
+	.v-kolona-1 {flex-basis: 8.33%;}
+	.v-kolona-2 {flex-basis: 16.66%;}
+	.v-kolona-3 {flex-basis: 25%;}
+	.v-kolona-4 {flex-basis: 33.33%;}
+	.v-kolona-5 {flex-basis: 41.66%;}
+	.v-kolona-6 {flex-basis: 50%;}
+	.v-kolona-7 {flex-basis: 58.33%;}
+	.v-kolona-8 {flex-basis: 66.66%;}
+	.v-kolona-9 {flex-basis: 75%;}
+	.v-kolona-10 {flex-basis: 83.33%;}
+	.v-kolona-11 {flex-basis: 91.66%;}
+	.v-kolona-12 {flex-basis: 100%;}
+}
+
+@media (max-width: 650px){
+ .App{
+  height: 100%;
+ }
+ .localTime{
+      font-size: 1.5rem;
+  }
+  .temperature{
+    font-size: 4.8rem;
+  }
+  .clouds{
+    font-size: 2.2rem;
+  }
+  .daysOfTheWeek{
+      flex-wrap: wrap;
+      font-size: 1.5rem;
+  }
+  .dayWeek {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-basis: 100%;
+    margin-top: 5px;
+    outline: white 1px solid; 
+  }
+  .dayWeek:first-child{
+    padding: 10px;
+    padding: 0px;
+  }
+  .dayWeek:nth-child(2){
+    padding: 10px;
+    padding: 0px;
+  }
+  .dayWeek:nth-child(3){
+    padding: 10px;
+    padding: 0px;
+  }
+  .dayWeek:nth-child(4){
+    padding: 10px;
+    padding: 0px;
+  }
+  .dayWeek:nth-child(5){
+    padding: 10px;
+    padding: 0px;
+  }
+  .extraData{
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 530px){
+  .App{
+    height: 100%;
+  }
+  .localTime{
+       font-size: 1.2rem;
+   }
+   .extraData{
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+   }
+   #tailWind, #fillDroplet, #temperatureHigh{
+    width: 25px; 
+   }
+   .city, .country {
+    font-size: 2.6rem;
+   }
+   #MdLocation{
+    width: 45px;
+    padding-top: 10px;
+   }
+}
+
+@media (max-width: 445px){
+  .App{
+    height: 100%;
+  }
+  #field{
+    width: 280px;
+   }
+   .searchButton{
+    margin-left: 235px;
+   }
+   .temperature{
+    font-size: 4rem;
+   }
+   .city, .country, .airPressure {
+    font-size: 2rem;
+   }
+   .clouds{
+    font-size: 1.6rem;
+   }
+   .country{
+    margin-top: 7px;
+    padding: 5px;
+   }
+   #MdLocation{
+    width: 25px; 
+   }
+   .extraData {
+    flex-wrap: wrap; 
+    justify-content: space-between;
+    height: 80%;  
+    margin-bottom: 10px;
+  }
+  .localTime{
+    flex-basis: 90%;
+   }
+  .feelsLike, .humidityClass, .windSpeed{
+    flex-wrap: nowrap;
+    flex-basis: 100%;
+    border-right: none;
+    flex-direction: row-reverse;
+    text-align: left;
+    margin-left: 30px;
+    margin-top: 2px;
+  }
+  .feelsLike div div{
+    margin-right: 0px;
+  }
+  .humidityClass div div{
+    margin-right: 0px;
+  }
+  .windSpeed div div{
+    margin-right: 0px;
+  } 
+}
+@media (max-width: 355px){
+  .App{
+    height: 100%;
+  }
+  .localTime{
+    flex-basis: 90%;
+   }
+   .clouds{
+    font-size: 1.4rem;
+   }
+   .extraData {
+   margin-bottom: 10px; 
+  }
+  }

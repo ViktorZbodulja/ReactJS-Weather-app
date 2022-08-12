@@ -24,10 +24,7 @@ function Main(props){
       else if (props.data.weather[0].description == "broken clouds"){
           emoji = overcastDay;
       }
-      else if (props.data.weather[0].description == "shower rain"){
-          emoji = rain;
-      }
-      else if (props.data.weather[0].description == "rain" || "light rain" || "drizzle"){
+      else if (props.data.weather[0].description == "rain" || "light rain" || "drizzle" || "shower rain"){
           emoji = rain;
       }
       else if (props.data.weather[0].description == "thunderstorm"){
@@ -59,7 +56,7 @@ function Main(props){
     
     return (
       <main className='flexContainer'>
-        <div className="allDataShow">
+        <div className="allDataShow t-kolona-6 p-kolona-7 k-kolona-10 c-kolona-11 l-kolona-8">
           <div className='city'>{props.data.name ? <div><MdLocationOn size="45px" id="MdLocation" />{props.data.name}</div> : ""}</div>
           {props.data.sys ? <div className='country'>{props.data.sys.country}</div> : ""}
           <div className='temperature'>
@@ -72,7 +69,7 @@ function Main(props){
             {props.data.main ? <div>{props.data.main.pressure} hPa</div> : ""} 
           </div>
         </div>
-        {props.data.main ? <div className='localTime'><div >{formatToLocalTime(props.data.dt, showLocalTime)}</div></div> : ""}
+        {props.data.main ? <div className='localTime'><div>{formatToLocalTime(props.data.dt, showLocalTime)}</div></div> : ""}
       <button className="forecastButton" onClick={props.changeStyle}>{props.button ? "Show Forecast" : "Hide Forecast"}</button>
       </main>
     );
