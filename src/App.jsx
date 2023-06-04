@@ -74,7 +74,7 @@ if(data.cod == "400" || data.cod == "404"){
   return (  
     <div className="App" style={{ background: `url(${slika}) no-repeat fixed center center/cover` }}>
       <div className='formClass'>
-        <p>Weather app</p>
+        <p>ForecastNow: Your Weather Assistant</p>
           <form className='formBlock' onSubmit={fetchData}>
             <input type="text" name="field" id="field" placeholder='Enter City' onChange={setCity}/>
             <button className="searchButton"  type='submit' ><AiOutlineSearch size="25px" color='white' /></button>

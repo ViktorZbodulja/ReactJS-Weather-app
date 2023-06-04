@@ -44,6 +44,12 @@ input {
   flex-basis: 100%;
   text-align: center;
 }
+.formClass p {
+  font-size: 1.8rem;
+  margin-top: 1rem;
+  font-weight: bolder;
+  text-shadow: 2px 2px 4px #242424;
+}
 
 .formBlock {
   position: sticky;
@@ -116,6 +122,7 @@ input:se {
   border: 1px solid;
   margin-top: 4rem;
   background-color: rgba(170, 167, 167, 0.6);
+  text-shadow: 1px 1px 2px #171717;
 }
 
 .city {
@@ -170,6 +177,7 @@ rgba(218, 165, 32, 0.7);*/
 .localTime div {
   display: inline-block;
   background-color: rgba(170, 167, 167, 0.6);
+  text-shadow: 2px 2px 4px #242424;
 }
 
 .airPressure {
@@ -712,6 +720,9 @@ rgba(218, 165, 32, 0.7);*/
   #MdLocation {
     width: 45px;
     padding-top: 10px;
+  }
+  .formClass p {
+    font-size: 1.6rem;
   }
 }
 @media (max-width: 445px) {
