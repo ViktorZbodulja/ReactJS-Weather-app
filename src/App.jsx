@@ -1,9 +1,10 @@
-import './App.css';
+import "./style/app.css";
 import { useState } from 'react';
 import { fetchDataPicture, fetchDataCity, fetchDailyForecast } from "./services/fetchData";
 import Main from './components/Main';
 import Footer from './components/Footer';
 import Forecast from './components/Forecast';
+
 import { AiOutlineSearch } from "react-icons/ai";
 
 function App() {
@@ -46,7 +47,7 @@ function App() {
   //https://api.openweathermap.org/data/2.5/onecall?lat=48.8534&lon=2.3488&exclude=current,minutely,hourly,alerts&appid=eb592531e2e65899c02409436bf985cf&units=metric
 
  
-var slika = "";
+let slika = "";
 
 if(pictureData){
   if(pictureData.total > 0){
@@ -73,6 +74,7 @@ if(data.cod == "400" || data.cod == "404"){
   return (  
     <div className="App" style={{ background: `url(${slika}) no-repeat fixed center center/cover` }}>
       <div className='formClass'>
+        <p>Weather app</p>
           <form className='formBlock' onSubmit={fetchData}>
             <input type="text" name="field" id="field" placeholder='Enter City' onChange={setCity}/>
             <button className="searchButton"  type='submit' ><AiOutlineSearch size="25px" color='white' /></button>

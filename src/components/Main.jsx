@@ -1,5 +1,3 @@
-
-import { useState } from "react";
 import { DateTime } from 'luxon';
 import { MdLocationOn } from "react-icons/md";
 
@@ -13,33 +11,43 @@ import fog from '../svg/partly-cloudy-day-fog.svg';
 
 function Main(props){
 
-    var emoji = null;     
-    if(typeof props.data.main !== "undefined"){
-      if(props.data.weather[0].description == "clear sky"){
-        emoji = clearDay; 
-      }
-      else if (props.data.weather[0].description == "few clouds" || "scattered clouds" || "overcast clouds" ){
-          emoji = partlyColudy;
-      }
-      else if (props.data.weather[0].description == "broken clouds"){
-          emoji = overcastDay;
-      }
-      else if (props.data.weather[0].description == "rain" || "light rain" || "drizzle" || "shower rain"){
-          emoji = rain;
-      }
-      else if (props.data.weather[0].description == "thunderstorm"){
-          emoji = thunderstorm;
-      }
-      else if (props.data.weather[0].description == "snow"){
-          emoji = snow;
-      }
-      else if (props.data.weather[0].description == "mist"){
-          emoji = fog;
-      }
+  var emoji = null;
+  if (typeof props.data.main !== "undefined") {
+    switch (props.data.weather[0].description) {
+      case "clear sky":
+        emoji = clearDay;
+        break;
+      case "few clouds":
+      case "scattered clouds":
+      case "overcast clouds":
+        emoji = partlyColudy;
+        break;
+      case "broken clouds":
+        emoji = overcastDay;
+        break;
+      case "rain":
+      case "light rain":
+      case "drizzle":
+      case "shower rain":
+        emoji = rain;
+        break;
+      case "thunderstorm":
+        emoji = thunderstorm;
+        break;
+      case "snow":
+      case "heavy snow":
+        emoji = snow;
+        break;
+      case "mist":
+        emoji = fog;
+        break;
+      default:
+        emoji = "";
+        break;
     }
-    else {
-      emoji = "";
-    }
+  } else {
+    emoji = "";
+  }
     
     const formatToLocalTime = (secs, zone, format = "cccc, dd LLL yyyy' | Local time: 'hh:mm a"
     ) => DateTime.fromSeconds(secs).setZone(zone).toFormat(format);
@@ -56,7 +64,7 @@ function Main(props){
     
     return (
       <main className='flexContainer'>
-        <div className="allDataShow t-kolona-6 p-kolona-7 k-kolona-10 c-kolona-11 l-kolona-8">
+        <div className="allDataShow t-column-6 p-column-7 k-column-10 c-column-11 l-column-8">
           <div className='city'>{props.data.name ? <div><MdLocationOn size="45px" id="MdLocation" />{props.data.name}</div> : ""}</div>
           {props.data.sys ? <div className='country'>{props.data.sys.country}</div> : ""}
           <div className='temperature'>

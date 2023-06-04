@@ -8,9 +8,9 @@ function Forecast(props){
   const localTimeZone = props.dailyData.timezone;
     
   return (
-        <div className={props.style ? "forecastDataHide l-kolona-8 k-kolona-10 c-kolona-11" : "forecast l-kolona-8 k-kolona-10 c-kolona-11"}>
+        <div className={props.style ? "forecastDataHide l-column-8 k-column-10 c-column-11" : "forecast l-column-8 k-column-10 c-column-11"}>
           <h3 className='forecastHeader'>DAILY FORECAST</h3>
-          <div className='daysOfTheWeek t-kolona-8 s-kolona-9 p-kolona-11 l-kolona-12'>
+          <div className='daysOfTheWeek t-column-8 s-column-9 p-column-11 l-column-12'>
           {props.dailyData.daily.slice(1, 6).map((d) => 
             <div className='dayWeek' key={d.dt}>
               <div>{formatToLocalTime(d.dt, localTimeZone,)}</div>

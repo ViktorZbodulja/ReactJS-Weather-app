@@ -1,0 +1,254 @@
+
+.d-column-1 {flex-basis: 8.33%;}
+.d-column-2 {flex-basis: 16.66%;}
+.d-column-3 {flex-basis: 25%;}
+.d-column-4 {flex-basis: 33.33%;}
+.d-column-5 {flex-basis: 41.66%;}
+.d-column-6 {flex-basis: 50%;}
+.d-column-7 {flex-basis: 58.33%;}
+.d-column-8 {flex-basis: 66.66%;}
+.d-column-9 {flex-basis: 75%;}
+.d-column-10 {flex-basis: 83.33%;}
+.d-column-11 {flex-basis: 91.66%;}
+.d-column-12 {flex-basis: 100%;}
+
+@media (max-width: 1700px){
+	.t-column-1 {flex-basis: 8.33%;}
+	.t-column-2 {flex-basis: 16.66%;}
+	.t-column-3 {flex-basis: 25%;}
+	.t-column-4 {flex-basis: 33.33%;}
+	.t-column-5 {flex-basis: 41.66%;}
+	.t-column-6 {flex-basis: 50%;}
+	.t-column-7 {flex-basis: 58.33%;}
+	.t-column-8 {flex-basis: 66.66%;}
+	.t-column-9 {flex-basis: 75%;}
+	.t-column-10 {flex-basis: 83.33%;}
+	.t-column-11 {flex-basis: 91.66%;}
+	.t-column-12 {flex-basis: 100%;}
+}
+
+@media (max-width: 1400px){
+	.s-column-1 {flex-basis: 8.33%;}
+	.s-column-2 {flex-basis: 16.66%;}
+	.s-column-3 {flex-basis: 25%;}
+	.s-column-4 {flex-basis: 33.33%;}
+	.s-column-5 {flex-basis: 41.66%;}
+	.s-column-6 {flex-basis: 50%;}
+	.s-column-7 {flex-basis: 58.33%;}
+	.s-column-8 {flex-basis: 66.66%;}
+	.s-column-9 {flex-basis: 75%;}
+	.s-column-10 {flex-basis: 83.33%;}
+	.s-column-11 {flex-basis: 91.66%;}
+	.s-column-12 {flex-basis: 100%;}
+}
+
+@media (max-width: 1250px){
+	.p-column-1 {flex-basis: 8.33%;}
+	.p-column-2 {flex-basis: 16.66%;}
+	.p-column-3 {flex-basis: 25%;}
+	.p-column-4 {flex-basis: 33.33%;}
+	.p-column-5 {flex-basis: 41.66%;}
+	.p-column-6 {flex-basis: 50%;}
+	.p-column-7 {flex-basis: 58.33%;}
+	.p-column-8 {flex-basis: 66.66%;}
+	.p-column-9 {flex-basis: 75%;}
+	.p-column-10 {flex-basis: 83.33%;}
+	.p-column-11 {flex-basis: 91.66%;}
+	.p-column-12 {flex-basis: 100%;}
+}
+
+@media (max-width: 1020px){
+	.l-column-1 {flex-basis: 8.33%;}
+	.l-column-2 {flex-basis: 16.66%;}
+	.l-column-3 {flex-basis: 25%;}
+	.l-column-4 {flex-basis: 33.33%;}
+	.l-column-5 {flex-basis: 41.66%;}
+	.l-column-6 {flex-basis: 50%;}
+	.l-column-7 {flex-basis: 58.33%;}
+	.l-column-8 {flex-basis: 66.66%;}
+	.l-column-9 {flex-basis: 75%;}
+	.l-column-10 {flex-basis: 83.33%;}
+	.l-column-11 {flex-basis: 91.66%;}
+	.l-column-12 {flex-basis: 100%;}
+}
+@media (max-width: 905px){
+	.k-column-1 {flex-basis: 8.33%;}
+	.k-column-2 {flex-basis: 16.66%;}
+	.k-column-3 {flex-basis: 25%;}
+	.k-column-4 {flex-basis: 33.33%;}
+	.k-column-5 {flex-basis: 41.66%;}
+	.k-column-6 {flex-basis: 50%;}
+	.k-column-7 {flex-basis: 58.33%;}
+	.k-column-8 {flex-basis: 66.66%;}
+	.k-column-9 {flex-basis: 75%;}
+	.k-column-10 {flex-basis: 83.33%;}
+	.k-column-11 {flex-basis: 91.66%;}
+	.k-column-12 {flex-basis: 100%;}
+}
+
+@media (max-width: 725px){
+	.c-column-1 {flex-basis: 8.33%;}
+	.c-column-2 {flex-basis: 16.66%;}
+	.c-column-3 {flex-basis: 25%;}
+	.c-column-4 {flex-basis: 33.33%;}
+	.c-column-5 {flex-basis: 41.66%;}
+	.c-column-6 {flex-basis: 50%;}
+	.c-column-7 {flex-basis: 58.33%;}
+	.c-column-8 {flex-basis: 66.66%;}
+	.c-column-9 {flex-basis: 75%;}
+	.c-column-10 {flex-basis: 83.33%;}
+	.c-column-11 {flex-basis: 91.66%;}
+	.c-column-12 {flex-basis: 100%;}
+}
+
+@media (max-width: 650px){
+	.v-column-1 {flex-basis: 8.33%;}
+	.v-column-2 {flex-basis: 16.66%;}
+	.v-column-3 {flex-basis: 25%;}
+	.v-column-4 {flex-basis: 33.33%;}
+	.v-column-5 {flex-basis: 41.66%;}
+	.v-column-6 {flex-basis: 50%;}
+	.v-column-7 {flex-basis: 58.33%;}
+	.v-column-8 {flex-basis: 66.66%;}
+	.v-column-9 {flex-basis: 75%;}
+	.v-column-10 {flex-basis: 83.33%;}
+	.v-column-11 {flex-basis: 91.66%;}
+	.v-column-12 {flex-basis: 100%;}
+}
+
+@media (max-width: 1700px){
+  .App{
+    height: 100vh;
+   
+  }
+  .footer{
+    margin-bottom: 10px;
+    height: 15vh;
+  }
+}
+@media (max-width: 650px){
+ .App{
+  height: 100vh;
+ }
+ .localTime{
+      font-size: 1.5rem;
+  }
+  .temperature{
+    font-size: 4.8rem;
+  }
+  .clouds{
+    font-size: 2.2rem;
+  }
+  .daysOfTheWeek{
+      flex-wrap: wrap;
+      font-size: 1.5rem;
+  }
+  .dayWeek {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-basis: 100%;
+    margin-top: 5px;
+    outline: white 1px solid; 
+    padding: 0px;
+  }
+  
+  .extraData{
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 530px){
+  .App{
+    height: 100vh;
+  }
+  .localTime{
+       font-size: 1.2rem;
+   }
+   .extraData{
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+   }
+   #tailWind, #fillDroplet, #temperatureHigh{
+    width: 25px; 
+   }
+   .city, .country {
+    font-size: 2.6rem;
+   }
+   #MdLocation{
+    width: 45px;
+    padding-top: 10px;
+   }
+}
+
+@media (max-width: 445px){
+  .App{
+    height: 100vh;
+  }
+  #field{
+    width: 280px;
+   }
+   .searchButton{
+    margin-left: 235px;
+   }
+   .temperature{
+    font-size: 4rem;
+   }
+   .city, .country, .airPressure {
+    font-size: 2rem;
+   }
+   .clouds{
+    font-size: 1.6rem;
+   }
+   .country{
+    margin-top: 7px;
+    padding: 5px;
+   }
+   #MdLocation{
+    width: 25px; 
+   }
+   .extraData {
+    flex-wrap: wrap; 
+    justify-content: space-between;
+    height: 80%;  
+    margin-bottom: 10px;
+  }
+  .localTime{
+    flex-basis: 90%;
+   }
+   .footer{
+    height: 20%;
+   }
+  .feelsLike, .humidityClass, .windSpeed{
+    flex-wrap: nowrap;
+    flex-basis: 100%;
+    border-right: none;
+    flex-direction: row-reverse;
+    text-align: left;
+    margin-left: 30px;
+    margin-top: 2px;
+  }
+  .feelsLike div div{
+    margin-right: 0px;
+  }
+  .humidityClass div div{
+    margin-right: 0px;
+  }
+  .windSpeed div div{
+    margin-right: 0px;
+  } 
+}
+@media (max-width: 355px){
+  .App{
+    height: 100vh;
+  }
+  .localTime{
+    flex-basis: 90%;
+   }
+   .clouds{
+    font-size: 1.4rem;
+   }
+   .extraData {
+   margin-bottom: 10px; 
+  }
+}
