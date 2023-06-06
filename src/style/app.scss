@@ -123,7 +123,7 @@ input:se {
   border: 1px solid;
   margin-top: 4rem;
   background-color: rgba(170, 167, 167, 0.6);
-  text-shadow: 1px 1px 2px #171717;
+  text-shadow: 1px 1px 2px #535353;
 }
 
 .city {
@@ -171,14 +171,14 @@ rgba(218, 165, 32, 0.7);*/
   font-weight: 200;
   margin-top: 10px;
   color: white; 
+  div {
+    display: inline-block;
+    background-color: rgba(170, 167, 167, 0.6);
+    text-shadow: 2px 2px 4px #242424;
+    padding: 0.2rem 0.5rem;
+    border-radius: 10px;
+  }
 }
-
-.localTime div {
-  display: inline-block;
-  background-color: rgba(170, 167, 167, 0.6);
-  text-shadow: 2px 2px 4px #242424;
-}
-
 .airPressure {
   flex-basis: 100%;
   font-size: 2.2rem;
@@ -201,9 +201,9 @@ rgba(218, 165, 32, 0.7);*/
   background-color: rgba(170, 167, 167, 0.5);
   color: white;
   border-radius: 25px; 
-  
   margin-top: 10px;
-  font-size: 1.8rem; 
+  font-size: 1.8rem;
+  text-shadow: 1px 1px 4px #242424; 
 }
 
 .feelsLike {
@@ -231,12 +231,10 @@ rgba(218, 165, 32, 0.7);*/
   flex-wrap: wrap;
   justify-content: space-around;
   border-right: 3px solid;
+  div {
+    flex-basis: 100%;
+  }
 }
-
-.humidityClass div {
-  flex-basis: 100%;
-}
-
 #fillDroplet {
   position: relative;
   transform: translate(-8px, 3px);
@@ -268,7 +266,7 @@ rgba(218, 165, 32, 0.7);*/
 .forecastDataHide {
   opacity: 0;
   display: flex;
-  flex-basis: 65%;
+  flex-basis: 70%;
   flex-wrap: wrap;
   justify-content: center;
   transition: opacity 0.4s ease-in-out; 
@@ -277,18 +275,17 @@ rgba(218, 165, 32, 0.7);*/
 .forecast {
   opacity: 1;
   display: flex;
-  flex-basis: 65%;
+  flex-basis: 70%;
   flex-wrap: wrap;
   justify-content: center;
   transition: opacity 0.6s ease-in-out; 
+  text-shadow: 2px 2px 4px #242424;
+  h3 {
+    flex-basis: 100%;
+    margin-bottom: 10px;
+    text-decoration: underline;
+  }
 }
-
-.forecast h3 {
-  flex-basis: 100%;
-  margin-bottom: 10px;
-  text-decoration: underline;
-}
-
 .forecastHeader {
   flex-basis: 100%;
 }
@@ -305,7 +302,7 @@ rgba(218, 165, 32, 0.7);*/
   background-color: rgba(167, 169, 170, 0.6);
   border-radius: 20px;
   text-align: center; 
-  outline: rgb(135, 134, 134) 1px solid;
+  outline: rgb(198, 198, 198) 1px solid;
 }
 
 .dayWeek:hover {

@@ -47,32 +47,32 @@ function App() {
   //https://api.openweathermap.org/data/2.5/onecall?lat=48.8534&lon=2.3488&exclude=current,minutely,hourly,alerts&appid=eb592531e2e65899c02409436bf985cf&units=metric
 
  
-let slika = "";
+let bgPicture = "";
 
 if(pictureData){
   if(pictureData.total > 0){
-    slika = pictureData.results[0].urls.full;
+    bgPicture = pictureData.results[0].urls.full;
   }
   else{
-    slika = "https://wallpapercave.com/wp/wp3594884.jpg";
+    bgPicture = "https://wallpapercave.com/wp/wp3594884.jpg";
   } 
 }
 else{
-  slika = "https://wallpapercave.com/wp/wp3594884.jpg";
+  bgPicture = "https://wallpapercave.com/wp/wp3594884.jpg";
 }
 /*
 if(location.trim() == "" || typeof location == "undefined"){
-  slika = "https://wallpapercave.com/wp/wp3594884.jpg";
+  bgPicture = "https://wallpapercave.com/wp/wp3594884.jpg";
 }
 */
 /*
 if(data.cod == "400" || data.cod == "404"){
-  slika = "https://wallpapercave.com/wp/wp3594884.jpg";
+  bgPicture = "https://wallpapercave.com/wp/wp3594884.jpg";
 }
 */
 
   return (  
-    <div className="App" style={{ background: `url(${slika}) no-repeat fixed center center/cover` }}>
+    <div className="App" style={{ background: `url(${bgPicture}) no-repeat fixed center center/cover` }}>
       <div className='formClass'>
         <p>ForecastNow: Your Weather Assistant</p>
           <form className='formBlock' onSubmit={fetchData}>
@@ -82,8 +82,8 @@ if(data.cod == "400" || data.cod == "404"){
           </form>
         </div>
       {data ? <Main data={data} changeStyle={changeStyle} button={button} /> : ""}
-      {data && dailyData ? <Forecast data={data} dailyData={dailyData} fetchData={fetchData} style={style} /> : ""}
-      <Footer data={data} location={location} />
+      {data && dailyData ? <Forecast dailyData={dailyData} style={style} /> : ""}
+      <Footer data={data}/>
     </div>
   );
 }

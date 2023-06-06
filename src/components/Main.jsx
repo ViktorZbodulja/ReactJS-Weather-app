@@ -1,6 +1,6 @@
 import { DateTime } from 'luxon';
 import { MdLocationOn } from "react-icons/md";
-
+//svg
 import clearDay from '../svg/clear-day.svg'
 import rain from '../svg/rain.svg';
 import snow from '../svg/snow.svg';
@@ -9,11 +9,10 @@ import partlyColudy from '../svg/partly-cloudy-day.svg';
 import overcastDay from '../svg/overcast-day.svg';
 import fog from '../svg/partly-cloudy-day-fog.svg';
 
-function Main(props){
-
+function Main({data, changeStyle, button}){
   var emoji = null;
-  if (typeof props.data.main !== "undefined") {
-    switch (props.data.weather[0].description) {
+  if (typeof data.main !== "undefined") {
+    switch (data.weather[0].description) {
       case "clear sky":
         emoji = clearDay;
         break;
@@ -52,7 +51,7 @@ function Main(props){
     const formatToLocalTime = (secs, zone, format = "cccc, dd LLL yyyy' | Local time: 'hh:mm a"
     ) => DateTime.fromSeconds(secs).setZone(zone).toFormat(format);
 
-    const localTimeZone = props.data.timezone;
+    const localTimeZone = data.timezone;
     const localTimeZoneToHours = localTimeZone/3600;
     var showLocalTime = 0;
     if(localTimeZoneToHours >= 0){
@@ -65,20 +64,20 @@ function Main(props){
     return (
       <main className='flexContainer'>
         <div className="allDataShow t-column-6 p-column-7 k-column-10 c-column-11 l-column-8">
-          <div className='city'>{props.data.name ? <div><MdLocationOn size="45px" id="MdLocation" />{props.data.name}</div> : ""}</div>
-          {props.data.sys ? <div className='country'>{props.data.sys.country}</div> : ""}
+          <div className='city'>{data.name ? <div><MdLocationOn size="45px" id="MdLocation" />{data.name}</div> : ""}</div>
+          {data.sys ? <div className='country'>{data.sys.country}</div> : ""}
           <div className='temperature'>
-            {props.data.main ? <h3>{props.data.main.temp.toFixed(1)} °C</h3> : ""}
+            {data.main ? <h3>{data.main.temp.toFixed(1)} °C</h3> : ""}
           </div>
           <div className='clouds'>
-            {props.data.weather ? <h3><img className='weatherSvg' src={emoji} width="65px" />{props.data.weather[0].description}</h3> : ""}
+            {data.weather ? <h3><img className='weatherSvg' src={emoji} width="65px" />{data.weather[0].description}</h3> : ""}
           </div>
           <div className='airPressure'>
-            {props.data.main ? <div>{props.data.main.pressure} hPa</div> : ""} 
+            {data.main ? <div>{data.main.pressure} hPa</div> : ""} 
           </div>
         </div>
-        {props.data.main ? <div className='localTime'><div>{formatToLocalTime(props.data.dt, showLocalTime)}</div></div> : ""}
-      <button className="forecastButton" onClick={props.changeStyle}>{props.button ? "Show Forecast" : "Hide Forecast"}</button>
+        {data.main ? <div className='localTime'><div>{formatToLocalTime(data.dt, showLocalTime)}</div></div> : ""}
+      <button className="forecastButton" onClick={changeStyle}>{button ? "Show Forecast" : "Hide Forecast"}</button>
       </main>
     );
 }
