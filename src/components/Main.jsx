@@ -38,6 +38,7 @@ function Main({data, changeStyle, button}){
         emoji = snow;
         break;
       case "mist":
+      case "fog":
         emoji = fog;
         break;
       default:
@@ -77,7 +78,7 @@ function Main({data, changeStyle, button}){
           </div>
         </div>
         {data.main ? <div className='localTime'><div>{formatToLocalTime(data.dt, showLocalTime)}</div></div> : ""}
-      <button className="forecastButton" onClick={changeStyle}>{button ? "Show Forecast" : "Hide Forecast"}</button>
+      <button className="forecastButton" onClick={changeStyle}>{button ? "Hide Forecast" : "Show Forecast"}</button>
       </main>
     );
 }

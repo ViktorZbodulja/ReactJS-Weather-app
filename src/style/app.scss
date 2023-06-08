@@ -6,10 +6,9 @@
   flex-wrap: wrap;
   justify-content: center;
   align-content: space-between;
-  height: 100vh;
-   /* background: url('./assets/weather-app-background.jpg') no-repeat center center/cover; */
+  min-height: 100vh;
   color: rgb(242, 236, 236);
-  overflow: scroll;
+  overflow-y: scroll;
 }
 
 * {
@@ -22,7 +21,7 @@
 }
 
 main {
-  flex-basis: 51%;
+  flex-basis: 51%; 
 }
 
 
@@ -121,8 +120,10 @@ input:se {
   text-align: center;
   border-radius: 25px;
   border: 1px solid;
-  margin-top: 4rem;
-  background-color: rgba(170, 167, 167, 0.6);
+  margin-top: 3rem;
+  //background-color: rgba(170, 167, 167, 0.6);
+  background-color: rgba(170, 167, 167, 0.25);
+  backdrop-filter: blur(3px);
   text-shadow: 1px 1px 2px #535353;
 }
 
@@ -201,7 +202,8 @@ rgba(218, 165, 32, 0.7);*/
   background-color: rgba(170, 167, 167, 0.5);
   color: white;
   border-radius: 25px; 
-  margin-top: 10px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   font-size: 1.8rem;
   text-shadow: 1px 1px 4px #242424; 
 }
@@ -299,10 +301,12 @@ rgba(218, 165, 32, 0.7);*/
 
 .dayWeek {
   padding: 1rem;
-  background-color: rgba(167, 169, 170, 0.6);
+  background-color: rgba(167, 169, 170, 0.4);
+  //background-color: rgba(170, 167, 167, 0.25);
   border-radius: 20px;
   text-align: center; 
   outline: rgb(198, 198, 198) 1px solid;
+  backdrop-filter: blur(2px);
 }
 
 .dayWeek:hover {
