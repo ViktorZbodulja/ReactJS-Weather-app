@@ -1,10 +1,9 @@
 import "./style/app.css";
 import { useState } from 'react';
 import { fetchDataPicture, fetchDataCity, fetchDailyForecast } from "./services/fetchData";
-//import bgImg from "./img/background_img.jpg";
 import bgImg5 from "./img/background5_img.jpg";
 import bgImg2 from "./img/background2_img.jpg";
-import bgImg3 from "./img/background3_img.jpg";
+import bgImg4 from "./img/background4_img.jpg";
 import Main from './components/Main';
 import Footer from './components/Footer';
 import Forecast from './components/Forecast';
@@ -56,10 +55,10 @@ if(pictureData){
     }  
 } else{
   if (hours > 6 && hours < 19) {
-    bgPicture = bgImg3;
+    bgPicture = bgImg5;
   }              
   else {
-    bgPicture = bgImg5;
+    bgPicture = bgImg4;
   } 
 }
 /*
