@@ -71,7 +71,7 @@ function Main({data, changeStyle, button}){
             {data.main ? <h3>{data.main.temp.toFixed(1)} °C</h3> : ""}
           </div>
           <div className='clouds'>
-            {data.weather ? <h3><img className='weatherSvg' src={emoji} width="65px" />{data.weather[0].description}</h3> : ""}
+            {data.weather ? <div className='clouds_details'><img className='weatherSvg' src={emoji} width="65px" /><h3>{data.weather[0].description}</h3></div> : ""}
           </div>
           <div className='airPressure'>
             {data.main ? <div>{data.main.pressure} hPa</div> : ""} 

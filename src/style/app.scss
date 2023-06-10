@@ -63,8 +63,7 @@ input {
   display: flex;
   justify-content: center;
   align-items: center;
-
-  height: 10vh; 
+  height: 6vh; 
 }
 
 input:focus { 
@@ -121,7 +120,7 @@ input:se {
   text-align: center;
   border-radius: 25px;
   border: 1px solid;
-  margin-top: 3rem;
+  margin-top: 4rem;
   //background-color: rgba(170, 167, 167, 0.6);
   background-color: rgba(170, 167, 167, 0.25);
   backdrop-filter: blur(3px);
@@ -130,21 +129,19 @@ input:se {
 .city {
   display: inline-block;
   text-align: left;
-  font-size: 3.3rem;
+  font-size: 3rem;
   text-decoration: underline 3px;
   margin-left: 15px; 
 }
 
 .country {
   display: inline-block;
-  font-size: 3.3rem;
+  font-size: 3rem;
   text-align: left;
   margin-left: 15px;
   background-color: rgba(240, 152, 25, 0.8);
   border-radius: 10px;
 }
-/* rgba(240, 152, 25, 0.7);
-rgba(218, 165, 32, 0.7);*/
 .temperature {
   flex-basis: 100%;
   font-size: 6rem;
@@ -154,13 +151,16 @@ rgba(218, 165, 32, 0.7);*/
 .clouds {
   flex-basis: 100%;
   text-align: right;
-  font-size: 2.6rem;   
+  font-size: 2.2rem;   
   margin-right: 15px; 
 }
-
-.weatherSvg {
-  transform: translateY(17px);
+.clouds_details {
+  display: flex;
+  align-items: center;
+  justify-content: right;
 }
+
+
 
 #MdLocation {
   padding-top: 5px;
@@ -215,12 +215,10 @@ rgba(218, 165, 32, 0.7);*/
   flex-wrap: wrap;
   justify-content: space-around;
   border-right: 3px solid;
+  div {
+    flex-basis: 100%;
+  }
 }
-
-.feelsLike div {
-  flex-basis: 100%;
-}
-
 #temperatureHigh {
   position: relative;
   transform: translate(-6px, 4px);
@@ -248,10 +246,9 @@ rgba(218, 165, 32, 0.7);*/
   flex-basis: 33%;
   flex-wrap: wrap;
   justify-content: space-around;
-}
-
-.windSpeed div {
-  flex-basis: 100%;
+  div {
+    flex-basis: 100%;
+  }
 }
 
 #tailWind {

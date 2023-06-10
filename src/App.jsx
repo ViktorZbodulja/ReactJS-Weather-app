@@ -1,9 +1,13 @@
 import "./style/app.css";
 import { useState } from 'react';
 import { fetchDataPicture, fetchDataCity, fetchDailyForecast } from "./services/fetchData";
-import bgImg5 from "./img/background5_img.jpg";
+//pics
 import bgImg2 from "./img/background2_img.jpg";
-import bgImg4 from "./img/background4_img.jpg";
+import dawnImg from "./img/dawn_img.jpg";
+import dayImg from "./img/day_img.jpg";
+import eveningImg from "./img/evening_img.jpg";
+import nightImg from "./img/night_img.jpg";
+//components
 import Main from './components/Main';
 import Footer from './components/Footer';
 import Forecast from './components/Forecast';
@@ -54,11 +58,17 @@ if(pictureData){
       bgPicture = bgImg2;
     }  
 } else{
-  if (hours > 6 && hours < 19) {
-    bgPicture = bgImg5;
-  }              
+  if (hours > 6 && hours < 8) {
+    bgPicture = dawnImg;
+  } 
+  else if (hours > 8 && hours < 17) {
+    bgPicture = dayImg;
+  } 
+  else if (hours > 17 && hours < 20) {
+    bgPicture = eveningImg;
+  }             
   else {
-    bgPicture = bgImg4;
+    bgPicture = nightImg;
   } 
 }
 /*
