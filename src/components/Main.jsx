@@ -34,6 +34,7 @@ function Main({data, changeStyle, button}){
         break;
       case "thunderstorm":
       case "thunderstorm with light rain":
+        case "thunderstorm with rain":
         emoji = thunderstorm;
         break;
       case "snow":
