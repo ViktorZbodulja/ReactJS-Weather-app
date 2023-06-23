@@ -58,10 +58,10 @@ if(pictureData){
       bgPicture = bgImg2;
     }  
 } else{
-  if (hours > 6 && hours < 8) {
+  if (hours > 5 && hours <= 7) {
     bgPicture = dawnImg;
   } 
-  else if (hours > 8 && hours < 17) {
+  else if (hours > 7 && hours <= 17) {
     bgPicture = dayImg;
   } 
   else if (hours > 17 && hours < 20) {

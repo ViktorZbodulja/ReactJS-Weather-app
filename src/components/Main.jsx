@@ -28,9 +28,12 @@ function Main({data, changeStyle, button}){
       case "light rain":
       case "drizzle":
       case "shower rain":
+      case "moderate rain":
+      case "heavy intensity rain":
         emoji = rain;
         break;
       case "thunderstorm":
+      case "thunderstorm with light rain":
         emoji = thunderstorm;
         break;
       case "snow":
