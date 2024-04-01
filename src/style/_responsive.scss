@@ -222,9 +222,15 @@
   .min_max_cont {
     flex-basis: 100%;
     justify-content: center;
-    padding: 1rem 0rem;
+    padding: 0rem 0rem 1rem 0rem;
     span {
       flex-basis: 35%;
+      font-size: 1.6rem;
+    }
+    span:nth-child(1){
+      text-align: right;
+      padding-right: 1rem;
+      border: none;
     }
   }
 }
@@ -233,13 +239,7 @@
     justify-content: center;
     span {
       flex-basis: 50%;
-
-    }
-    span:nth-child(1){
-      text-align: right;
-      padding-right: 1rem;
-      border: none;
-    }
+    } 
   }
 }
 @media (max-width: 445px){

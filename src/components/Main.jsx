@@ -9,7 +9,7 @@ import partlyColudy from '../svg/partly-cloudy-day.svg';
 import overcastDay from '../svg/overcast-day.svg';
 import fog from '../svg/partly-cloudy-day-fog.svg';
 
-function Main({data, changeStyle, button}){
+function Main({data, dailyData, changeStyle, button}){
   var emoji = null;
   if (typeof data.main !== "undefined") {
     switch (data.weather[0].description) {
@@ -73,9 +73,9 @@ function Main({data, changeStyle, button}){
           {data.sys ? <div className='country'>{data.sys.country}</div> : ""}
           <div className='temperature'>
             {data.main ? <h3>{data.main.temp.toFixed(1)} °C</h3> : ""}
-            {data.main ? <div className='min_max_cont'>
-                  <span>min: {Math.ceil(data.main.temp_min)} °C</span>
-                  <span>max: {Math.ceil(data.main.temp_max)} °C</span>
+            {dailyData.daily ? <div className='min_max_cont'>
+                  <span>min: {Math.ceil(dailyData.daily[0].temp.min)} °C</span>
+                  <span>max: {Math.ceil(dailyData.daily[0].temp.max)} °C</span>
             </div> : ""}
           </div>
           <div className='clouds'>
