@@ -160,6 +160,10 @@
   }
   .temperature{
     font-size: 4.8rem;
+    align-items: center
+  }
+  .min_max_cont {
+    font-size: 1.7rem;
   }
   .clouds{
     font-size: 2.2rem;
@@ -208,9 +212,36 @@
       font-size: 1.6rem;
     }
   }
-  
+  .temperature {
+    flex-wrap: wrap;
+    h3 {
+      padding: 0rem;
+      text-align: center;
+    }
+  }
+  .min_max_cont {
+    flex-basis: 100%;
+    justify-content: center;
+    padding: 1rem 0rem;
+    span {
+      flex-basis: 35%;
+    }
+  }
 }
+@media (max-width: 500px){
+  .min_max_cont {
+    justify-content: center;
+    span {
+      flex-basis: 50%;
 
+    }
+    span:nth-child(1){
+      text-align: right;
+      padding-right: 1rem;
+      border: none;
+    }
+  }
+}
 @media (max-width: 445px){
   .App{
     height: 100vh;
@@ -280,5 +311,23 @@
    }
    .extraData {
    margin-bottom: 10px; 
+  }
+  .min_max_cont{
+    flex-wrap: wrap;
+    span {
+      flex-basis: 100%;
+      border: none;
+      text-align: center;
+      font-size: 1.5rem;
+    }
+    span:nth-child(1){
+      text-align: center;
+    } 
+  }
+  .temperature {
+    h3{
+      flex-basis: 100%;
+      text-align: center;
+    }
   }
 }

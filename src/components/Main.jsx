@@ -73,6 +73,10 @@ function Main({data, changeStyle, button}){
           {data.sys ? <div className='country'>{data.sys.country}</div> : ""}
           <div className='temperature'>
             {data.main ? <h3>{data.main.temp.toFixed(1)} °C</h3> : ""}
+            {data.main ? <div className='min_max_cont'>
+                  <span>min: {Math.ceil(data.main.temp_min)} °C</span>
+                  <span>max: {Math.ceil(data.main.temp_max)} °C</span>
+            </div> : ""}
           </div>
           <div className='clouds'>
             {data.weather ? <div className='clouds_details'><img className='weatherSvg' src={emoji} width="65px" /><h3>{data.weather[0].description}</h3></div> : ""}

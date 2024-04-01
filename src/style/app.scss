@@ -143,9 +143,31 @@ input:se {
   border-radius: 10px;
 }
 .temperature {
+  display: flex;
   flex-basis: 100%;
+  justify-content: center;
+  text-align: right;
   font-size: 6rem;
   text-shadow: 0 0 3px black;
+  h3 {
+    flex-basis: 70%;
+    padding-right: 2rem;
+  }
+}
+
+.min_max_cont {
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 40%;
+  align-content: center;
+  font-size: 1.9rem;
+  padding: 2rem 0rem;
+  span {
+  flex-basis: 100%;
+  text-align: left;
+  border-left: 2px solid white;
+  padding-left: 1rem;
+  }
 }
 
 .clouds {

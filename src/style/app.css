@@ -150,9 +150,31 @@ input:se {
 }
 
 .temperature {
+  display: flex;
   flex-basis: 100%;
+  justify-content: center;
+  text-align: right;
   font-size: 6rem;
   text-shadow: 0 0 3px black;
+}
+.temperature h3 {
+  flex-basis: 70%;
+  padding-right: 2rem;
+}
+
+.min_max_cont {
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 40%;
+  align-content: center;
+  font-size: 1.9rem;
+  padding: 2rem 0rem;
+}
+.min_max_cont span {
+  flex-basis: 100%;
+  text-align: left;
+  border-left: 2px solid white;
+  padding-left: 1rem;
 }
 
 .clouds {
@@ -712,6 +734,10 @@ input:se {
   }
   .temperature {
     font-size: 4.8rem;
+    align-items: center;
+  }
+  .min_max_cont {
+    font-size: 1.7rem;
   }
   .clouds {
     font-size: 2.2rem;
@@ -756,6 +782,34 @@ input:se {
   }
   .formClass p {
     font-size: 1.6rem;
+  }
+  .temperature {
+    flex-wrap: wrap;
+  }
+  .temperature h3 {
+    padding: 0rem;
+    text-align: center;
+  }
+  .min_max_cont {
+    flex-basis: 100%;
+    justify-content: center;
+    padding: 1rem 0rem;
+  }
+  .min_max_cont span {
+    flex-basis: 35%;
+  }
+}
+@media (max-width: 500px) {
+  .min_max_cont {
+    justify-content: center;
+  }
+  .min_max_cont span {
+    flex-basis: 50%;
+  }
+  .min_max_cont span:nth-child(1) {
+    text-align: right;
+    padding-right: 1rem;
+    border: none;
   }
 }
 @media (max-width: 445px) {
@@ -827,5 +881,21 @@ input:se {
   }
   .extraData {
     margin-bottom: 10px;
+  }
+  .min_max_cont {
+    flex-wrap: wrap;
+  }
+  .min_max_cont span {
+    flex-basis: 100%;
+    border: none;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+  .min_max_cont span:nth-child(1) {
+    text-align: center;
+  }
+  .temperature h3 {
+    flex-basis: 100%;
+    text-align: center;
   }
 }/*# sourceMappingURL=app.css.map */
