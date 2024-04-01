@@ -893,6 +893,7 @@ input:se {
   }
   .min_max_cont span:nth-child(1) {
     text-align: center;
+    padding-right: 0;
   }
   .temperature h3 {
     flex-basis: 100%;
