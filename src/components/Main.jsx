@@ -117,7 +117,7 @@ function Main({data, dailyData, airPolution, changeStyle, button}){
           </div>
          
           <div className='clouds'>
-            {data.weather && <div className='clouds_details'><img className='weatherSvg' src={emojiHandler()} width="65px" /><h3>{data.weather[0].description}</h3></div>}
+            {data.weather && <div className='clouds_details'><img className='weatherSvg' src={emojiHandler()} width="65px" alt='weather_icon' /><h3>{data.weather[0].description}</h3></div>}
           </div>
           <div className='airPressure_polution_container'>
           {airPolution.list && 

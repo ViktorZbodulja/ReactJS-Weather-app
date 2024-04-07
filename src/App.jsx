@@ -85,7 +85,7 @@ function App() {
         <form className='formBlock' onSubmit={fetchData}>
           <input type="text" name="field" id="field" placeholder='Enter City' onChange={setCity} />
           <button className="searchButton" type='submit' ><AiOutlineSearch size="25px" color='white' /></button>
-          {data && data.message == "city not found" ? <div className='notExist'>City not found. Please enter other city.</div> : ""}
+          {data && data.message === "city not found" ? <div className='notExist'>City not found. Please enter other city.</div> : ""}
         </form>
       </div>
       {data && dailyData ? <Main data={data} dailyData={dailyData} changeStyle={changeStyle} button={button} airPolution={airPolution} /> : ""}

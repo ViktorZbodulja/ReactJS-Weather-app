@@ -14,7 +14,7 @@ function Forecast({dailyData, style }){
           {dailyData.daily.slice(1, 6).map((d) => 
             <div className='dayWeek' key={d.dt}>
               <div>{formatToLocalTime(d.dt, localTimeZone,)}</div>
-              <div><img src={`https://openweathermap.org/img/wn/${d.weather[0].icon}@2x.png`} width="85px"/></div>
+              <div><img src={`https://openweathermap.org/img/wn/${d.weather[0].icon}@2x.png`} width="85px" alt='weather_icon'/></div>
               <div>{d.temp.min.toFixed(0)}°/{d.temp.max.toFixed(0)}°</div>   
             </div>
           )}
