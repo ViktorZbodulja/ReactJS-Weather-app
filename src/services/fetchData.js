@@ -47,3 +47,8 @@ export function fetchDailyForecast(lat, lon) {
   const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=current,minutely,hourly,alerts&appid=eb592531e2e65899c02409436bf985cf&units=metric`;
   return fetch(url).then((response) => resolveResponse(response));
 }
+
+export function fetchAirPolution(lat, lon) {
+  const url = `http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=eb592531e2e65899c02409436bf985cf`;
+  return fetch(url).then((response) => resolveResponse(response));
+}

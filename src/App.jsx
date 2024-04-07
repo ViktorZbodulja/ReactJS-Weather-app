@@ -1,6 +1,6 @@
 import "./style/app.css";
 import { useState } from 'react';
-import { fetchDataPicture, fetchDataCity, fetchDailyForecast } from "./services/fetchData";
+import { fetchDataPicture, fetchDataCity, fetchDailyForecast, fetchAirPolution } from "./services/fetchData";
 //pics
 import bgImg2 from "./img/background2_img.jpg";
 import dawnImg from "./img/dawn_img.jpg";
@@ -19,9 +19,11 @@ function App() {
   const [pictureData, setPictureData] = useState(null);
   const [location, setLocationData] = useState("");
   const [dailyData, setDailyData] = useState("");
+  const [airPolution, setAirPolution] = useState("");
   //forecast button toggle
   const [style, setStyle] = useState(true);
   const [button, setButton] = useState(false);
+
   const changeStyle = () => {
     setStyle(current => !current);
     setButton(current => !current);
@@ -32,20 +34,24 @@ function App() {
 
   const fetchData = event => {
     event.preventDefault();
-
-    Promise.all([
-      fetchDataPicture(location),
-      fetchDataCity(location),
-    ])
-      .then(([pictureData, data]) => {
-        setPictureData(pictureData);
+    
+    fetchDataCity(location)
+      .then(data => {
         setCityData(data);
-        fetchDailyForecast(data.coord.lat, data.coord.lon)
-          .then(dailyData => setDailyData(dailyData));
+        return Promise.all([
+          fetchDataPicture(location),
+          fetchDailyForecast(data.coord.lat, data.coord.lon),
+          fetchAirPolution(data.coord.lat, data.coord.lon)
+        ]);
+      })
+      .then(([pictureData, dailyData, airPolution]) => {
+        setPictureData(pictureData);
+        setDailyData(dailyData);
+        setAirPolution(airPolution);
       })
       .catch(error => alert(error));
   };
-
+ 
   //https://api.openweathermap.org/data/2.5/onecall?lat=48.8534&lon=2.3488&exclude=current,minutely,hourly,alerts&appid=eb592531e2e65899c02409436bf985cf&units=metric
 
   let bgPicture = "";
@@ -71,16 +77,7 @@ function App() {
       bgPicture = nightImg;
     }
   }
-  /*
-  if(location.trim() == "" || typeof location == "undefined"){
-    bgPicture = "https://wallpapercave.com/wp/wp3594884.jpg";
-  }
-  */
-  /*
-  if(data.cod == "400" || data.cod == "404"){
-    bgPicture = "https://wallpapercave.com/wp/wp3594884.jpg";
-  }
-  */
+
   return (
     <div className="App" style={{ background: `url(${bgPicture}) no-repeat fixed center center/cover` }}>
       <div className='formClass'>
@@ -91,7 +88,7 @@ function App() {
           {data && data.message == "city not found" ? <div className='notExist'>City not found. Please enter other city.</div> : ""}
         </form>
       </div>
-      {data && dailyData ? <Main data={data} dailyData={dailyData} changeStyle={changeStyle} button={button} /> : ""}
+      {data && dailyData ? <Main data={data} dailyData={dailyData} changeStyle={changeStyle} button={button} airPolution={airPolution} /> : ""}
       {data && dailyData ? <Forecast dailyData={dailyData} style={style} /> : ""}
       <Footer data={data} />
     </div>

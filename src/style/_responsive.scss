@@ -130,10 +130,26 @@
   .forecast, .forecastDataHide{
    flex-basis: 65%;
   }
+  .allDataShow {
+    flex-basis: 60%;
+  }
+}
+@media (max-width: 1200px){
+  .polution_container {
+    margin-left: 4rem;
+  }
+}
+@media (max-width: 1050px) {
+  .allDataShow {
+    flex-basis: 70%;
+  }
 }
 @media (max-width: 930px){
   .forecast, .forecastDataHide{
    flex-basis: 75%;
+  }
+  .allDataShow {
+    flex-basis: 80%;
   }
 }
 @media (max-width: 840px){
@@ -145,11 +161,20 @@
   .forecast, .forecastDataHide{
    flex-basis: 90%;
   }
+  .allDataShow {
+    flex-basis: 90%;
+  }
 }
 @media (max-width: 700px){
   .forecast, .forecastDataHide{
    flex-basis: 95%;
   }
+  .allDataShow {
+    flex-basis: 95%;
+  }
+  .temperature h3 {
+    flex-basis: 80%;
+}
 }
 @media (max-width: 650px){
  .App{
@@ -184,6 +209,18 @@
   .extraData{
     margin-bottom: 10px;
   }
+}
+@media (max-width: 585px) {
+    .polution_container{
+      margin-left: 0rem; 
+      flex-basis: 70%;
+      text-align: right;
+
+    }
+    .airPressure_polution_container {
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
 }
 
 @media (max-width: 530px){
@@ -233,7 +270,13 @@
       border: none;
     }
   }
+  .polution_container {
+    display: flex;
+    justify-content: flex-end;
+    flex-basis: 100%;
+  }
 }
+
 @media (max-width: 500px){
   .min_max_cont {
     justify-content: center;
@@ -315,7 +358,7 @@
   .min_max_cont{
     flex-wrap: wrap;
     span {
-      flex-basis: 100%;
+      flex-basis: 48%;
       border: none;
       text-align: center;
       font-size: 1.5rem;
@@ -331,4 +374,11 @@
       text-align: center;
     }
   }
+}
+@media (max-width: 290px) {
+  .min_max_cont{
+    span {
+      flex-basis: 50%;
+    }
+}
 }
