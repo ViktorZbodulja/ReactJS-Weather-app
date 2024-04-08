@@ -883,8 +883,8 @@ input:se {
   .searchButton {
     margin-left: 235px;
   }
-  .temperature {
-    font-size: 4rem;
+  .temperature h3 {
+    font-size: 5.3rem;
   }
   .city, .country, .airPressure {
     font-size: 2rem;
@@ -948,7 +948,6 @@ input:se {
   }
   .min_max_cont span {
     flex-basis: 48%;
-    border: none;
     text-align: center;
     font-size: 1.5rem;
   }
