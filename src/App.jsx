@@ -52,8 +52,6 @@ function App() {
       .catch(error => alert(error));
   };
  
-  //https://api.openweathermap.org/data/2.5/onecall?lat=48.8534&lon=2.3488&exclude=current,minutely,hourly,alerts&appid=eb592531e2e65899c02409436bf985cf&units=metric
-
   let bgPicture = "";
   let hours = new Date().getHours();
   if (pictureData) {

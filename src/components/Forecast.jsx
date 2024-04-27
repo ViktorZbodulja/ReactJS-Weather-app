@@ -22,9 +22,4 @@ function Forecast({dailyData, style }){
         </div>    
     );
 }
-
-
-          
-
-
 export default Forecast;

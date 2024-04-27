@@ -1,3 +1,4 @@
+const API_KEY = process.env.REACT_APP_ONECALL_25_API_KEY;
 function resolveResponse(response) {
   if (response.status === 200) {
     return response.json();
@@ -39,16 +40,17 @@ export function fetchDataPicture(location) {
 }
 
 export function fetchDataCity(location) {
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=eb592531e2e65899c02409436bf985cf`;
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${API_KEY}`;
   return fetch(url).then((response) => resolveResponse(response));
 }
 
 export function fetchDailyForecast(lat, lon) {
-  const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=current,minutely,hourly,alerts&appid=eb592531e2e65899c02409436bf985cf&units=metric`;
+  const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=current,minutely,hourly,alerts&appid=${API_KEY}&units=metric`;
   return fetch(url).then((response) => resolveResponse(response));
 }
+//https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&exclude=current,minutely,hourly,alerts&appid=600a7d38e33c2f2e46eef865d0ca13b4&units=metric
 
 export function fetchAirPolution(lat, lon) {
-  const url = `https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=eb592531e2e65899c02409436bf985cf`;
+  const url = `https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${API_KEY}`;
   return fetch(url).then((response) => resolveResponse(response));
 }
