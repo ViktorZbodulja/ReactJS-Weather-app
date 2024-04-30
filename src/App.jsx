@@ -86,8 +86,8 @@ function App() {
           {data && data.message === "city not found" && <div className='notExist'>City not found. Please try with other city.</div>}
         </form>
       </div>
-      {data && dailyData ? <Main data={data} dailyData={dailyData} changeStyle={changeStyle} button={button} airPolution={airPolution} /> : ""}
-      {data && dailyData ? <Forecast dailyData={dailyData} style={style} /> : ""}
+      {data && dailyData && <Main data={data} dailyData={dailyData} changeStyle={changeStyle} button={button} airPolution={airPolution} />}
+      {data && dailyData && <Forecast dailyData={dailyData} style={style} />}
       <Footer data={data} />
     </div>
   );

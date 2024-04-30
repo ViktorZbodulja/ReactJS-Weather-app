@@ -1,4 +1,5 @@
-const API_KEY = process.env.REACT_APP_ONECALL_25_API_KEY;
+const API_KEY_WEATHER = process.env.REACT_APP_ONECALL_25_API_KEY;
+const API_KEY_PICTURE = process.env.REACT_APP_UNSPLASH_API_KEY;
 
 function resolveResponse(response) {
   if (response.status === 200) {
@@ -36,22 +37,23 @@ export function fetchDataPicture(location) {
       }
     })
     .replace(/\s/g, "");
-  const url = `https://api.unsplash.com/search/photos?page=1&query=${locationWithoutSpacesAndReplacements}&client_id=hpIuyGb7Hcgx0So1qtiqjL0vcZArJ9wJWGO4_jcS13Y`;
+  const url = `https://api.unsplash.com/search/photos?page=1&query=${locationWithoutSpacesAndReplacements}&client_id=${API_KEY_PICTURE}`;
   return fetch(url).then((response) => resolveResponse(response));
 }
 
 export function fetchDataCity(location) {
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${API_KEY}`;
+  const locationWithoutSpaces = location.trim();
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${locationWithoutSpaces}&units=metric&appid=${API_KEY_WEATHER}`;
   return fetch(url).then((response) => resolveResponse(response));
 }
 
 export function fetchDailyForecast(lat, lon) {
-  const url = ` https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&exclude=current,minutely,hourly,alerts&appid=${API_KEY}&units=metric`;
+  const url = ` https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&exclude=current,minutely,hourly,alerts&appid=${API_KEY_WEATHER}&units=metric`;
   return fetch(url).then((response) => resolveResponse(response));
 }
 //https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=current,minutely,hourly,alerts&appid=${API_KEY}&units=metric
 
 export function fetchAirPolution(lat, lon) {
-  const url = `https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${API_KEY}`;
+  const url = `https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${API_KEY_WEATHER}`;
   return fetch(url).then((response) => resolveResponse(response));
 }
